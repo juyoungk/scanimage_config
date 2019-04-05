@@ -44,7 +44,7 @@ beamDaqs(1).displayNames = {'Beam1-ResScan'};                  % Optional string
 beamDaqs(1).voltageRanges = 1.15;                % Scalar or array of values specifying voltage range to use for each beam. Scalar applies to each beam.
 
 beamDaqs(1).calInputChanIDs = 0;               % Array of integers specifying AI channel IDs, one for each beam modulation channel. Values of nan specify no calibration for particular beam.
-beamDaqs(1).calOffsets = 0.0101236;                    % Array of beam calibration offset voltages for each beam calibration channel
+beamDaqs(1).calOffsets = 0.010237;                    % Array of beam calibration offset voltages for each beam calibration channel
 beamDaqs(1).calUseRejectedLight = false;        % Scalar or array indicating if rejected light (rather than transmitted light) for each beam's modulation device should be used to calibrate the transmission curve
 beamDaqs(1).calOpenShutterIDs = 1;             % Array of shutter IDs that must be opened for calibration (ie shutters before light modulation device).
 
@@ -94,7 +94,7 @@ digitalIODeviceName = 'PXI1Slot3';  % String: Device name of the DAQ board or Fl
 fpgaModuleType = 'NI7961';          % String: Type of FlexRIO FPGA module in use. One of {'NI7961' 'NI7975'}
 digitizerModuleType = 'NI5734';     % String: Type of digitizer adapter module in use. One of {'NI5732' 'NI5734'}
 rioDeviceID = 'RIO0';               % FlexRIO Device ID as specified in MAX. If empty, defaults to 'RIO0'
-channelsInvert = [true true true false];             % Logical: Specifies if the input signal is inverted (i.e., more negative for increased light signal)
+channelsInvert = [true false true false];             % Logical: Specifies if the input signal is inverted (i.e., more negative for increased light signal)
 
 externalSampleClock = true;        % Logical: use external sample clock connected to the CLK IN terminal of the FlexRIO digitizer module
 externalSampleClockRate = 8e+07;       % [Hz]: nominal frequency of the external sample clock connected to the CLK IN terminal (e.g. 80e6); actual rate is measured on FPGA
